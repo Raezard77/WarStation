@@ -1,0 +1,116 @@
+// toggleCSSDebug()
+.debug body {
+    overflow: visible;
+    * {
+        outline: 1px solid var(--debug-border-color);
+    }
+}
+
+
+
+// Hero Section += h1 + CTAs
+#hero-sec {
+    @include flex-position($dir:column, $x:space-between);
+    min-height: 150px;
+}
+
+// h1 {
+//     color: var(--white-color);
+//     font-family: sans-serif;
+//     text-align: center;
+//     font-weight: bold;
+//     font-size: 3.2rem;
+// }
+
+#cta-div {
+    min-width: 250px;
+    min-height: 70px;
+    @include flex-position($x:space-around);
+}
+
+#cta-div a {
+    // ---
+    padding: 10px 15px;
+    font-size: 1.2em;
+    border-radius: $border-radius-btn;
+    // ---
+    background: var(--primary-color);
+    color: var(--bg-color);
+    transition: all $transition-duration ease-in-out;
+
+    &:hover {
+        filter: saturate($dark-saturation);
+    }
+
+    &:nth-child(2) {
+        outline: 1px solid var(--primary-color);
+        background: var(--bg-color);
+        color: var(--primary-color);
+    }
+}
+
+
+
+// Image Cards
+.img-card {
+    width: 30%;
+    transition: $transition-duration;
+    @include box-shadow;
+
+    &:hover {
+        @include box-shadow($v:.8rem, $blur:1.6rem);
+    }
+
+    .caption {
+        letter-spacing: .4px;
+        font-style: italic;
+        padding: 2px 16px;
+    }
+}
+
+
+
+// Form Elements:- pug mixin textInput()
+div.input-group {
+    height: 70px;
+    width: 50%;
+    position:relative;
+}
+
+input.input-field {
+    all: unset;
+    position: absolute;
+    bottom:0;
+    // ---
+    width:100%;
+    padding: 10px 0;
+    // ---
+    border-bottom:1px solid var(--gray-color);
+    color: var(--font-color);
+    font-size: 1rem;
+}
+
+label.input-label {
+    // ---
+    z-index:-1;
+    position:absolute;
+    bottom:0;
+    // ---
+    transition: $transition-duration;
+    margin-bottom:10px;
+    // ---
+    color:var(--gray-color);
+    font-size: 1rem;
+}
+
+input.input-field:not(:placeholder-shown),
+input.input-field:focus {
+    &~ label.input-label {
+        bottom:40px;
+        font-size: calc( #{1rem} - 0.3em );
+        color: var(--primary-color);
+    }
+    border-width: 3px;
+    border-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-image-slice: 1;
+}

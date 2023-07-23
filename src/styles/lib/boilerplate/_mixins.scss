@@ -16,9 +16,9 @@
 // RWD:- Grid Fluid Cols (Img Gallery)
 @mixin grid-position(
     $cols-num: auto-fill,
-    $min-width:300px,
+    $min-width:30rem,
     $max-width:1fr,
-    $gap:40px
+    $gap:4rem
 ){
     display: grid;
     place-items: center;
@@ -47,12 +47,12 @@
 
 // Box:- Creating The Box
 @mixin box-styles(
-    $width:200px,
-    $height:200px,
+    $width:20rem,
+    $height:20rem,
     $bg:var(--bg-color),
     $clr: var(--font-color),
-    $padding: 20px,
-    $margin: 10px,
+    $padding: 2rem,
+    $margin: 1rem,
     $border: 1px solid var(--primary-color),
     $b-radius: $border-radius-box,
 ) {
@@ -76,7 +76,7 @@
 @mixin box-shadow(
     $h:0,
     $v:3px,
-    $blur:12px,
+    $blur:1.2rem,
     $spread:0,
     $clr:var(--shadow-color)
 ){
@@ -88,18 +88,9 @@
 // Box:- Pinterest Imag View Style
 @mixin masonry-view(
     $cols:4,
-    $width:300px,
-    $gap:20px
+    $width:30rem,
+    $gap:2rem
 ){
     columns:$width $cols;
     column-gap:$gap;
-}
-
-
-
-// Float:- ClearFix
-@mixin clearfix(){
-    content: "";
-    clear: both;
-    display: table;
 }

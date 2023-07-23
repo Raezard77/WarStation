@@ -1,6 +1,22 @@
-// Boilerplate
+// Identity
 @import "./boilerplate/colors";
 @import "./boilerplate/fonts";
+
+
+// Reusable
 @import "./boilerplate/vars";
 @import "./boilerplate/mixins";
+
+
+// Heavy
 @import "./boilerplate/general";
+@import "./boilerplate/tags";
+@import "./boilerplate/initial";
+
+
+// Fancy
+@import "./boilerplate/anime";
+
+
+// MQ
+@import "./boilerplate/mob";

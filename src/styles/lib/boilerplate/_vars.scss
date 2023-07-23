@@ -1,31 +1,14 @@
-// MQ Pixels - ToDo:- CSS Native Vars
-$mq-max-width: 799px;
-$sec-padding: 45px;
-$border-radius-btn: 12px;
-$border-radius-box: 40px;
-$font-size: 1.3em;
-$nav-height:10vh;
-
-
-
-
 // ---
-$debug-border-color: rgb(218, 26, 26);
-
-
-
-// ---
-$gaming-bgs: (
-    0: "https://wallpaperaccess.com/full/782531.jpg",
-    1: "https://wallpaperaccess.com/full/2044933.jpg",
-    2: "https://wallpaperaccess.com/full/2284572.jpg",
-    3: "https://wallpaperaccess.com/full/2096252.jpg",
-    4: "https://wallpaperaccess.com/full/2096240.jpg",
-    5: "https://wallpaperaccess.com/full/2086970.jpg"
-);
+:root, [data-theme="dark"] {
+    --sec-padding:4.5rem;
+}
 
 
 
 // ---
 $transition-duration: 0.3s;
 $dark-saturation: 0.8;
+$mq-max-width: 799px;
+$border-radius-btn: 1.2rem;
+$border-radius-box: 4rem;
+$nav-height:10vh;
