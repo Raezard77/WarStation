@@ -1,13 +1,11 @@
-import { useState } from "react";
+import '@styles/index.scss'
 
-function App() {
-    const [count, setCount] = useState(0);
-
+const App = _ => {
     return (
         <>
             <h1>Rayan</h1>
         </>
-    );
+    )
 }
 
-export default App;
+export default App

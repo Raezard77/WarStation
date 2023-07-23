@@ -1,0 +1,29 @@
+// DOCs
+// color shadows -> filter: saturate($dark-saturation);
+
+
+
+:root {
+    --primary-color: #c71212;  // links && Buttons Backgrounds
+    --secondary-color: rgb(150, 2, 155);
+    --font-color: #424242;
+    --bg-color: #fff;
+    --bg-color: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] {
+    --primary-color: #38ef7d;
+    --secondary-color: #0ff;
+    --font-color: #e9edef;
+    --bg-color: #020202;
+    --shadow-color: #38ef7e81;
+}
+
+
+:root, [data-theme="dark"] {
+    --gray-color: #9b9b9b;
+    --transparent-bg-color: #02020263;
+    --white-color:#fff;
+    --black-color:#000;
+}

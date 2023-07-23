@@ -1,0 +1,54 @@
+* {margin:0;padding:0;box-sizing:border-box;}
+:root {scroll-behavior: smooth}
+::selection {color: var(--bg-color);background-color: var(--primary-color);}
+@supports (scrollbar-color: var(--primary-color) var(--bg-color)) {
+    * {scrollbar-color: var(--primary-color) var(--bg-color);}
+}
+ol, ul {list-style: none;}
+img {
+    max-width: 100%;object-fit: contain;
+    &.circle {border-radius: 50%;height: 100%;}
+}
+
+
+a, button {
+    all: unset;
+    transition: all $transition-duration ease-in-out;
+    cursor: pointer;
+    &:hover{
+        filter: saturate($dark-saturation);
+    }
+}
+a {
+    color: var(--bg-color);
+}
+
+
+
+
+
+
+button {
+    // ---
+    all: unset;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    padding: 10px 16px;
+    border-radius: $border-radius-btn;
+}
+
+.img-card {
+    width: 30%;
+    transition: $transition-duration;
+    @include box-shadow;
+
+    &:hover {
+        @include box-shadow($v:8px, $blur:16px);
+    }
+
+    .caption {
+        letter-spacing: .4px;
+        font-style: italic;
+        padding: 2px 16px;
+    }
+}
