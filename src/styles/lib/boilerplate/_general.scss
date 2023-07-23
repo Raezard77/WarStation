@@ -6,6 +6,10 @@ ol, ul {list-style: none;}
 @supports (scrollbar-color: var(--primary-color) var(--bg-color)) {
     * {scrollbar-color: var(--primary-color) var(--bg-color);}
 }
+.debug body {
+    overflow: visible;
+    * {outline: 1px solid var(--debug-border-color);}
+}
 img {
     max-width: 100%;object-fit: contain;
     &.circle {border-radius: 50%;height: 100%;}

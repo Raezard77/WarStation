@@ -1,7 +1,7 @@
 body {
-    // essential for RWD debuggin XD
+    // Essential for RWD debuggin XD
     min-height: 100vh;
-    width: 100vw;
+    min-width: 100vw;
     overflow-x: hidden;
     // ---
     background-color: var(--bg-color);
@@ -13,20 +13,17 @@ body {
 
 header {
     // ---
-    height: 100vh;
+    min-height: 100vh;
     max-width: 100%;
     background: var(--bg-color);
-    // ??
-    position: relative;
-    overflow: hidden;
 }
 
 
 
 main {
     // ---
-    height: calc( 100vh - #{$nav-height});
-    width: 100%;
+    min-height: calc( 100vh - #{$nav-height});
+    min-width: 100%;
     // ---
     padding: var(--sec-padding);
     @include flex-position;
@@ -34,21 +31,13 @@ main {
 
 
 
-h1 {
-    color: crimson;
-    font-size: 3.2rem;
-    font-family: 'Alegreya Sans', sans-serif;
-}
-
-
-
 section {
     @include box-styles(
-        $width:100%,
-        $height:100vh,
+        $min-width:100%,
+        $min-height:100vh,
         $bg:var(--bg-color),
         $clr: var(--font-color),
-        $padding: 20px,
+        $padding: 2rem,
         $margin: 0,
         $border: none,
         $b-radius: none,
@@ -59,8 +48,8 @@ section {
 
 .icon-div {
     // ---
-    width:2rem;
-    height:2rem;
+    min-width:1.5rem;
+    min-height:1.5rem;
     @include flex-position($display:inline- flex);
     overflow: hidden;
     // ---
