@@ -1,9 +1,10 @@
 import '@styles/index.scss'
+import * as filler from '@site-content'
 
 const App = _ => {
     return (
         <>
-            <h1>Rayan</h1>
+            <h1>{filler.brandName}</h1>
         </>
     )
 }
