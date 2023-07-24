@@ -4,7 +4,9 @@
         "paths": {
             "@/*": ["src/*"],
             "@styles/*": ["src/styles/*"],
-            "@site-content": ["src/data/site-content.js"],
+            "@components/*": ["src/components/*"],
+            "@pages/*": ["src/pages/*"],
+            "@site-content": ["src/data/site-content.js"]
         }
     }
 }

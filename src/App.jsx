@@ -1,12 +1,11 @@
-import '@styles/index.scss'
-import * as filler from '@site-content'
+import Home from "@pages/Home";
 
-const App = _ => {
+const App = (_) => {
     return (
         <>
-            <h1>{filler.brandName}</h1>
+            <Home />
         </>
-    )
-}
+    );
+};
 
-export default App
+export default App;

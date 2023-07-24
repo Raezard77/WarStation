@@ -25,7 +25,7 @@ a, button {
     transition: all $transition-duration ease-in-out;  // #Change_Me
     &:hover{filter: saturate($dark-saturation);}  // #Change_Me
 }
-a {color: var(--bg-color);}  // #Change_Me
+a {color: var(--primary-color);}  // #Change_Me
 button {  // #Change_Me
     background: var(--primary-color);
     color: var(--bg-color);
