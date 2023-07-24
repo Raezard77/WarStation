@@ -2,7 +2,9 @@ const Navbar = ({ brandName, pageLinks }) => {
     return (
         <>
             <nav>
-                <h1>{brandName}</h1>
+                <div id="nav-logo-container">
+                    <h1>{brandName}</h1>
+                </div>
 
                 {/* <a href="#" class="toggle-button">
                     <span class="bar"></span>

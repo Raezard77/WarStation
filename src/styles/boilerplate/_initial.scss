@@ -16,8 +16,7 @@ body {
 header {
     // ---
     min-height: 100vh;
-    max-width: 100%;
-    background: var(--bg-color);
+    width: 100%;
 }
 
 
@@ -25,7 +24,7 @@ header {
 main {
     // ---
     min-height: calc( 100vh - #{$nav-height});
-    min-width: 100%;
+    width: 100%;
     // ---
     padding: var(--sec-padding);
     @include flex-position;

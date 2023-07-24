@@ -1,5 +1,31 @@
-@import "./lib/manager";
+// Identity
+@import "./boilerplate/colors";
+@import "./boilerplate/fonts";
 
+
+// Reusable
+@import "./boilerplate/vars";
+@import "./boilerplate/mixins";
+
+
+// Heavy - #Change_Me
+@import "./boilerplate/general";
+@import "./boilerplate/initial";
+
+
+// Fancy
+@import "./boilerplate/anime";
+
+
+// MQ
+@import "./boilerplate/mob";
+
+
+// Components
+@import "./components/navbar";
+
+
+// TEMP
 h1 {
     color: crimson;
     font-size: 3.2rem;

@@ -16,9 +16,9 @@
 // RWD:- Grid Fluid Cols (Img Gallery)
 @mixin grid-position(
     $cols-num: auto-fill,
-    $min-width:30rem,
+    $min-width:10rem,
     $max-width:1fr,
-    $gap:4rem
+    $gap:1rem
 ){
     display: grid;
     place-items: center;
