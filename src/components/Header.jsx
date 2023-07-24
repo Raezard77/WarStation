@@ -1,6 +1,9 @@
-const Navbar = ({ brandName, pageLinks }) => {
+import BgVideo from "@components/BgVideo";
+
+const Header = ({ brandName, pageLinks }) => {
     return (
-        <>
+        <header>
+            <BgVideo vidPoster="" webmVid="" mp4Vid="" />
             <nav>
                 <div id="nav-logo-container">
                     <h1>{brandName}</h1>
@@ -20,8 +23,8 @@ const Navbar = ({ brandName, pageLinks }) => {
                     ))}
                 </ul>
             </nav>
-        </>
+        </header>
     );
 };
 
-export default Navbar;
+export default Header;

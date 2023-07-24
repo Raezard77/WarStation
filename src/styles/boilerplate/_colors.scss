@@ -4,7 +4,7 @@
 
 
 :root {
-    --primary-color: #c71212;
+    --primary-color: crimson;
     --secondary-color: rgb(150, 2, 155);
     --font-color: #424242;
     --bg-color: #fff;
@@ -13,7 +13,7 @@
 }
 
 [data-theme="dark"] {
-    --primary-color: #38ef7d;
+    --primary-color: #3853ef;
     --secondary-color: #0ff;
     --font-color: #e9edef;
     --bg-color: #020202;
@@ -27,4 +27,5 @@
     --transparent-bg-color: #02020263;
     --white-color:#fff;
     --black-color:#000;
+    --transparent-bg-color: #02020217;
 }

@@ -1,0 +1,9 @@
+.bg-vid {
+    transform: translateX(50%) translateY(50%);
+    position: fixed;
+    right: 50%;
+    bottom: 50%;
+    z-index: -1;
+    min-height:100%;
+    min-width: 100%;
+}

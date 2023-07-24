@@ -1,10 +1,3 @@
-// TEMP
-* {
-    outline: 1px solid #333;
-}
-
-
-
 // E1
 nav {
     // 1
@@ -21,8 +14,8 @@ nav {
     @include flex-position($x:space-between);
 
     // 4
-    @include box-shadow;
-    background-color: var(--bg-color);
+    background-color: var(--transparent-bg-color);
+    // @include box-shadow;
 
     // 5
     & + main {
@@ -38,16 +31,29 @@ nav {
 
 
 // E2
-// #nav-logo-container {
+#nav-logo-container {
+    height: 100%;
+    @include flex-position;
+    margin: var(--nav-logo-margin);
 
-// }
+    h1 {
+        font-size: 3.2rem;
+        font-family: 'Alegreya Sans', sans-serif;
+        color: var(--primary-color);
+    }
+}
 
 
 
 // E3
 nav ul {
+    // 1
     min-height: 100%;
     @include flex-position;
+    margin: var(--nav-ul-margin);
+
+    // 2 - For Dropdown Menus
+    position: relative;
 }
 
 
@@ -65,5 +71,5 @@ nav ul li a {
     min-height: $nav-height;
     @include flex-position;
     padding: 0 3rem 0 3rem;  // @Hard_Coded
-    background-color: red;
+    font-size: 2rem;
 }

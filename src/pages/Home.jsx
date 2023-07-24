@@ -1,16 +1,14 @@
 import "@styles/index.scss";
 import * as filler from "@site-content";
-import Navbar from "@components/Navbar";
+import Header from "@components/Header";
 
 const Home = (_) => {
     return (
         <>
-            <header>
-                <Navbar
-                    brandName={filler.brandName}
-                    pageLinks={filler.pageLinks}
-                />
-            </header>
+            <Header
+                brandName={filler.brandName}
+                pageLinks={filler.pageLinks}
+            />
         </>
     );
 };
