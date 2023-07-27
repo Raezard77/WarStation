@@ -14,7 +14,8 @@ nav {
     @include flex-position($x:space-between);
 
     // 4
-    background-color: var(--transparent-bg-color);
+    background-color: var(--secondary-color);
+    color: var(--white-color);
     // @include box-shadow;
 
     // 5
@@ -37,9 +38,10 @@ nav {
     margin: var(--nav-logo-margin);
 
     h1 {
-        font-size: 3.2rem;
-        font-family: 'Alegreya Sans', sans-serif;
-        color: var(--primary-color);
+        font-size: calc( #{$nav-height} / 2.2 );
+        // span {
+            font-weight: 800;
+        // }
     }
 }
 
@@ -68,8 +70,13 @@ nav ul li {
 
 // E5
 nav ul li a {
+    // ---
     min-height: $nav-height;
     @include flex-position;
     padding: 0 3rem 0 3rem;  // @Hard_Coded
     font-size: 2rem;
+
+    // Dependant on $nav-height
+    color: var(--white-color);  // @Override(initial)
+    font-size: calc( #{$nav-height} / 3.5 );
 }
