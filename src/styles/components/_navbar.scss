@@ -37,8 +37,13 @@ nav {
     @include flex-position;
     margin: var(--nav-logo-margin);
 
+    figure {
+        width: 2vw;
+        margin-right: 3px;
+    }
+
     h1 {
-        font-size: calc( #{$nav-height} / 2.2 );
+        font-size: 1.2vw;
         // span {
             font-weight: 800;
         // }
@@ -78,5 +83,5 @@ nav ul li a {
 
     // Dependant on $nav-height
     color: var(--white-color);  // @Override(initial)
-    font-size: calc( #{$nav-height} / 3.5 );
+    font-size: .8vw;
 }

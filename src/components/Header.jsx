@@ -9,7 +9,9 @@ const Header = ({ brandName, pageLinks }) => {
             <BgVideo vidPoster={Poster} mp4Vid={HeroVideo} />
             <nav>
                 <div id="nav-logo-container">
-                    {/* <img src={logo} alt="WarStation Logo" /> */}
+                    <figure>
+                        <img src={logo} alt="WarStation Logo" />
+                    </figure>
                     <h1>{brandName}</h1>
                 </div>
 

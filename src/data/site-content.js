@@ -1,2 +1,2 @@
-export const brandName = 'WarStation'
-export const pageLinks = ["Home", "About", "Contact", "Accounts"]
+export const brandName = "WarStation";
+export const pageLinks = ["Home", "Accounts", "Contact", "About"];
