@@ -11,55 +11,53 @@ body {
     font-size: 1.7rem;
 }
 
-
-
 header {
     // ---
-    min-height: 100vh;
+    height: calc(100vh - #{$nav-height});
     width: 100%;
+    // ---
+    position: relative;
+    // ---
+    margin-top: $nav-height;
 }
-
-
 
 main {
     // ---
-    min-height: calc( 100vh - #{$nav-height});
+    height: 100%;
     width: 100%;
     // ---
     padding: var(--sec-padding);
     @include flex-position;
 }
 
-
-
 section {
     @include box-styles(
-        $min-width:100%,
-        $min-height:100vh,
-        $bg:var(--bg-color),
+        $min-width: 100%,
+        $height: calc(100vh - #{$nav-height}),
+        $bg: var(--bg-color),
         $clr: var(--font-color),
         $padding: 2rem,
         $margin: 0,
         $border: none,
-        $b-radius: none,
-    )
+        $b-radius: none
+    );
 }
-
-
 
 .icon-div {
     // ---
-    min-width:1.5rem;
-    min-height:1.5rem;
-    @include flex-position($display:inline- flex);
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    @include flex-position($display: inline- flex);
     overflow: hidden;
     // ---
-    border-radius:50%;
+    border-radius: 50%;
     background-color: var(--primary-color);
     // ---
     svg path {
-        fill:var(--bg-color--primary-color);
+        fill: var(--bg-color--primary-color);
     }
     // tmp fix
-    svg {height: 90%;}
+    svg {
+        height: 90%;
+    }
 }

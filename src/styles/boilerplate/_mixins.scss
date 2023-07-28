@@ -48,7 +48,7 @@
 // Box:- Creating The Box
 @mixin box-styles(
     $min-width:20rem,
-    $min-height:20rem,
+    $height:20rem,
     $bg:var(--bg-color),
     $clr: var(--font-color),
     $padding: 2rem,
@@ -58,7 +58,7 @@
 ) {
     // ---
     min-width: $min-width;
-    min-height: $min-height;
+    height: $height;
     // ---
     color: $clr;
     background: $bg;
