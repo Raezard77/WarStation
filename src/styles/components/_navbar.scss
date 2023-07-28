@@ -1,9 +1,8 @@
-// E1
+// ------------------------------1------------------------------
 nav {
     // 1
     width: 100%;
     height: $nav-height;
-
 
     // 2
     position: fixed;
@@ -11,26 +10,20 @@ nav {
     left: 0;
 
     // 3
-    @include flex-position($x:space-between);
+    @include flex-position($x: space-between);
 
     // 4
-    background-color: var(--secondary-color);
+    background: var(--secondary-color)
+        linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
     color: var(--white-color);
 
     // 5
     & + main {
         margin-top: $nav-height;
     }
-    
-    // 6
-    &.screen-scrolled {
-        background-color: var(--primary-color);
-    }
 }
 
-
-
-// E2
+// ------------------------------2------------------------------
 #nav-logo-container {
     height: 100%;
     @include flex-position;
@@ -47,9 +40,7 @@ nav {
     }
 }
 
-
-
-// E3
+// ------------------------------3------------------------------
 nav ul {
     // 1
     min-height: 100%;
@@ -60,17 +51,12 @@ nav ul {
     position: relative;
 }
 
-
-
-// E4
+// ------------------------------4------------------------------
 nav ul li {
-    min-height: $nav-height;  // @Room_For_Better
-    @include flex-position;
+    min-height: $nav-height; // @Room_For_Better
 }
 
-
-
-// E5
+// ------------------------------5------------------------------
 nav ul li a {
     // ---
     min-height: $nav-height;
@@ -79,13 +65,57 @@ nav ul li a {
     font-size: 2rem;
 
     // Dependant on $nav-height
-    color: var(--white-color);  // @Override(initial)
+    color: var(--white-color); // @Override(initial)
     font-size: var(--nav--font-size);
+
+    &::before {
+        // ---
+        height: 2px;
+        content: "";
+        // ---
+        position: absolute;
+        width: 0%;
+        bottom: 0px;
+        // ---
+        background-color: var(--primary-color);
+        border-radius: 5px;
+        transition: $transition-duration;
+    }
+
+    &:hover::before {
+        width: 70%;
+    }
 }
 
+// ------------------------------6------------------------------
+nav ul {
+    li.dropdown-container {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-menu {
+        // ---
+        display: none;
+        position: absolute;
+        z-index: 1;
 
+        // ---
+        background: var(--secondary-color)
+            linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+        min-width: 16rem;
 
-// E6
+        // ---
+        a {
+            padding: 1.2rem 1.6rem;
+        }
+    }
+
+    .dropdown-container:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+// ------------------------------7------------------------------
 #nav-mobile {
     // // 1
     display: none;
@@ -93,12 +123,9 @@ nav ul li a {
     // 2
     margin-right: var(--nav-inner-margin);
 
-    
     #burger-menu {
         @include flex-position;
         flex-direction: column;
-
-
 
         span {
             // ---
@@ -106,52 +133,60 @@ nav ul li a {
             height: 5px;
             width: 35px;
             background: var(--white-color);
-            margin-bottom:4px;
+            margin-bottom: 4px;
             // ---
             cursor: pointer;
             border-radius: 5px;
             transition: all $transition-duration ease-in-out;
 
-            &:last-child {margin-bottom: 0;}
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
 
-
-
         &.active span {
-            // transform is heights && margins -> 5+4+5+4 
-            &:first-child {transform: translate(0, 9px) rotate(-45deg);}
-            &:nth-child(2) {background-color: transparent}
-            &:last-child {transform: translate(0, -9px) rotate(45deg)}
+            // transform is heights && margins -> 5+4+5+4
+            &:first-child {
+                transform: translate(0, 9px) rotate(-45deg);
+            }
+            &:nth-child(2) {
+                background-color: transparent;
+            }
+            &:last-child {
+                transform: translate(0, -9px) rotate(45deg);
+            }
         }
     }
 }
 
-
-
-// Tablets
+// ---------------------------Tablets---------------------------
 @media all and (max-width: $mq-tablet) {
-    :root, [data-theme="dark"] {
+    :root,
+    [data-theme="dark"] {
         // Navbar
-        --nav-inner-margin:5rem;
-        --nav-logo-width:3rem;
-        --nav--h1-size:2rem;
-        --nav--font-size:1.4rem;
-        --nav--li-padding:2rem;
+        --nav-inner-margin: 5rem;
+        --nav-logo-width: 3rem;
+        --nav--h1-size: 2rem;
+        --nav--font-size: 1.4rem;
+        --nav--li-padding: 2rem;
     }
 
     // Navbar
-    #nav-mobile {display: block;}
-    nav ul {display: none;}
+    #nav-mobile {
+        display: block;
+    }
+    nav ul {
+        display: none;
+    }
 }
 
-
-
-// Mobile
+// ---------------------------Mobile---------------------------
 @media all and (max-width: $mq-mobile) {
-    :root, [data-theme="dark"] {
+    :root,
+    [data-theme="dark"] {
         // Navbar
-        --nav-inner-margin:2rem;
-        --nav-logo-width:2.7rem;
-        --nav--h1-size:1.8rem;
+        --nav-inner-margin: 2rem;
+        --nav-logo-width: 2.7rem;
+        --nav--h1-size: 1.8rem;
     }
 }

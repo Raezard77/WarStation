@@ -2,24 +2,25 @@
 @import "./boilerplate/colors";
 @import "./boilerplate/fonts";
 
-
-
 // Reusable
 @import "./boilerplate/vars";
 @import "./boilerplate/mixins";
-
-
 
 // Heavy - #Change_Me
 @import "./boilerplate/general";
 @import "./boilerplate/initial";
 
-
-
 // Fancy
 @import "./boilerplate/anime";
 
-
-
 // Components
 @import "./components/navbar";
+
+// TEMP
+header {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    );
+}

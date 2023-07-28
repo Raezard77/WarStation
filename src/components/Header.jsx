@@ -2,7 +2,7 @@ import BgVideo from "@components/BgVideo";
 import logo from "@assets/logo.png";
 import Poster from "@assets/vid-poster.jpg";
 import HeroVideo from "@assets/hero-vid.mp4";
-import '@scripts/navbar'
+import "@scripts/navbar";
 
 const Header = ({ brandName, pageLinks }) => {
     return (
@@ -25,12 +25,35 @@ const Header = ({ brandName, pageLinks }) => {
                 </div>
 
                 <ul>
-                    {pageLinks.map((link, index) => (
-                        <li key={index}>
-                            {/* <a href={link}>{link}</a> */}
-                            <a href="#">{link}</a>
-                        </li>
-                    ))}
+                    {pageLinks.map((link, index) => {
+                        if (typeof link === "object") {
+                            return (
+                                <li key={index} className="dropdown-container">
+                                    {/* <a href={link}>{link}</a> */}
+                                    <a href="#">
+                                        {Object.keys(link)[0]}{" "}
+                                        <span>&nbsp;▾</span>
+                                    </a>
+                                    <ul className="dropdown-menu hidden">
+                                        {link[Object.keys(link)[0]].map(
+                                            (link2, index2) => (
+                                                <li key={index2}>
+                                                    <a href="#">{link2}</a>
+                                                </li>
+                                            )
+                                        )}
+                                    </ul>
+                                </li>
+                            );
+                        } else {
+                            return (
+                                <li key={index}>
+                                    {/* <a href={link}>{link}</a> */}
+                                    <a href="#">{link}</a>
+                                </li>
+                            );
+                        }
+                    })}
                 </ul>
             </nav>
         </header>
