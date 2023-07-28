@@ -16,7 +16,6 @@ nav {
     // 4
     background-color: var(--secondary-color);
     color: var(--white-color);
-    // @include box-shadow;
 
     // 5
     & + main {
@@ -35,18 +34,16 @@ nav {
 #nav-logo-container {
     height: 100%;
     @include flex-position;
-    margin: var(--nav-logo-margin);
+    margin-left: var(--nav-inner-margin);
 
     figure {
-        width: 2vw;
+        width: var(--nav-logo-width);
         margin-right: 3px;
     }
 
     h1 {
-        font-size: 1.2vw;
-        // span {
-            font-weight: 800;
-        // }
+        font-size: var(--nav--h1-size);
+        font-weight: 800;
     }
 }
 
@@ -57,7 +54,7 @@ nav ul {
     // 1
     min-height: 100%;
     @include flex-position;
-    margin: var(--nav-ul-margin);
+    margin-right: var(--nav-inner-margin);
 
     // 2 - For Dropdown Menus
     position: relative;
@@ -78,10 +75,83 @@ nav ul li a {
     // ---
     min-height: $nav-height;
     @include flex-position;
-    padding: 0 3rem 0 3rem;  // @Hard_Coded
+    padding: 0 var(--nav--li-padding) 0 var(--nav--li-padding);
     font-size: 2rem;
 
     // Dependant on $nav-height
     color: var(--white-color);  // @Override(initial)
-    font-size: .8vw;
+    font-size: var(--nav--font-size);
+}
+
+
+
+// E6
+#nav-mobile {
+    // // 1
+    display: none;
+
+    // 2
+    margin-right: var(--nav-inner-margin);
+
+    
+    #burger-menu {
+        @include flex-position;
+        flex-direction: column;
+
+
+
+        span {
+            // ---
+            display: block;
+            height: 5px;
+            width: 35px;
+            background: var(--white-color);
+            margin-bottom:4px;
+            // ---
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all $transition-duration ease-in-out;
+
+            &:last-child {margin-bottom: 0;}
+        }
+
+
+
+        &.active span {
+            // transform is heights && margins -> 5+4+5+4 
+            &:first-child {transform: translate(0, 9px) rotate(-45deg);}
+            &:nth-child(2) {background-color: transparent}
+            &:last-child {transform: translate(0, -9px) rotate(45deg)}
+        }
+    }
+}
+
+
+
+// Tablets
+@media all and (max-width: $mq-tablet) {
+    :root, [data-theme="dark"] {
+        // Navbar
+        --nav-inner-margin:5rem;
+        --nav-logo-width:3rem;
+        --nav--h1-size:2rem;
+        --nav--font-size:1.4rem;
+        --nav--li-padding:2rem;
+    }
+
+    // Navbar
+    #nav-mobile {display: block;}
+    nav ul {display: none;}
+}
+
+
+
+// Mobile
+@media all and (max-width: $mq-mobile) {
+    :root, [data-theme="dark"] {
+        // Navbar
+        --nav-inner-margin:2rem;
+        --nav-logo-width:2.7rem;
+        --nav--h1-size:1.8rem;
+    }
 }

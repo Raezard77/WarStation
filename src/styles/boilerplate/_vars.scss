@@ -1,11 +1,20 @@
 // ---
 :root, [data-theme="dark"] {
+    // General Colors
+    --white-color:#fff;
+    --gray-color: #9b9b9b;
+    --black-color:#000;
+    --transparent-bg-color: #02020217;
+
+    // Navbar
+    --nav-inner-margin:7rem;
+    --nav-logo-width:4rem;
+    --nav--h1-size:2.5rem;
+    --nav--font-size:1.6rem;
+    --nav--li-padding:3rem;
+
     // ---
     --sec-padding:4.5rem;
-    
-    // Bi-Directional
-    --nav-logo-margin: 0 0 0 7rem;
-    --nav-ul-margin: 0 7rem 0 0;
 }
 
 
@@ -13,7 +22,11 @@
 // ---
 $transition-duration: 0.3s;
 $dark-saturation: 0.8;
-$mq-max-width: 799px;
 $border-radius-btn: 1.2rem;
 $border-radius-box: 4rem;
 $nav-height:5vh;
+
+
+// MQ Widths  @SPECIAL:- map not working with react
+$mq-tablet:900px;  // ~768~
+$mq-mobile:480px;

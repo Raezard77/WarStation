@@ -14,6 +14,8 @@ export default defineConfig({
             "@pages": path.resolve(__dirname, "./src/pages"),
             "@site-content": path.resolve(__dirname, "./src/data/site-content.js"),
             "@assets": path.resolve(__dirname, "./src/assets"),
+            "@scripts": path.resolve(__dirname, "./src/scripts"),
+            "@hooks": path.resolve(__dirname, "./src/hooks")
         },
     },
 });

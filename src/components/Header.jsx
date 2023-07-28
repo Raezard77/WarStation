@@ -2,6 +2,7 @@ import BgVideo from "@components/BgVideo";
 import logo from "@assets/logo.png";
 import Poster from "@assets/vid-poster.jpg";
 import HeroVideo from "@assets/hero-vid.mp4";
+import '@scripts/navbar'
 
 const Header = ({ brandName, pageLinks }) => {
     return (
@@ -15,15 +16,18 @@ const Header = ({ brandName, pageLinks }) => {
                     <h1>{brandName}</h1>
                 </div>
 
-                {/* <a href="#" class="toggle-button">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </a> */}
+                <div id="nav-mobile">
+                    <a id="burger-menu" data-href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
 
                 <ul>
                     {pageLinks.map((link, index) => (
                         <li key={index}>
+                            {/* <a href={link}>{link}</a> */}
                             <a href="#">{link}</a>
                         </li>
                     ))}

@@ -8,6 +8,8 @@
             "@pages/*": ["src/pages/*"],
             "@site-content": ["src/data/site-content.js"],
             "@assets/*": ["src/assets/*"],
+            "@scripts/*": ["src/scripts/*"],
+            "@hooks/*": ["src/hooks/*"]
         }
     }
 }
