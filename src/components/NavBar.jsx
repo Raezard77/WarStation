@@ -19,7 +19,7 @@ const NavBar = ({ logo, brandName, pageLinks }) => {
                 </a>
             </div>
 
-            <ul>
+            <ul id="nav-ul">
                 {pageLinks.map((link, index) => {
                     if (typeof link === "object") {
                         return (
