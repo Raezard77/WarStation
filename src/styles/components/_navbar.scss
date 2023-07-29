@@ -17,9 +17,11 @@ nav {
 
 // ------------------------------2------------------------------
 #nav-logo-container {
+    all:unset;
     height: 100%;
     @include flex-position;
     margin-left: var(--nav-inner-margin);
+    cursor: pointer;
 
     figure {
         width: var(--nav-logo-width);
@@ -43,14 +45,13 @@ nav {
 
     li.dropdown-container {
         position: relative;
-        @include flex-position($dir: column, $x:space-around);
+        @include flex-position($dir: column, $x: space-around);
     }
 
     .dropdown-menu {
-
-        @include flex-position($dir: column, $x:space-between);
+        @include flex-position($dir: column, $x: space-between);
         display: none;
-        top:$nav-height;
+        top: $nav-height;
         position: absolute;
         margin-right: 0;
         z-index: 1;
@@ -88,7 +89,6 @@ nav {
     font-size: var(--nav--font-size);
 
     &::before {
-
         height: 2px;
         content: "";
 
@@ -108,13 +108,12 @@ nav {
 
 // ------------------------------6------------------------------
 #nav-mobile {
-
     display: none;
 
     margin-right: var(--nav-inner-margin);
 
     #burger-menu {
-        @include flex-position($dir:column);
+        @include flex-position($dir: column);
 
         span {
             // ---
@@ -174,12 +173,19 @@ nav {
         width: 50vw;
         background: var(--secondary-color)
             linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
-        @include flex-position($dir:column, $x:space-around);
+        @include flex-position($dir: column, $x: space-around);
         transition: all $transition-duration ease-in-out;
 
         &.shown {
             right: 0;
         }
+
+        // .dropdown-menu {
+        //     position: relative;
+        //     height: 5vh;
+        //     border: 1px solid var(--accent-color);
+        //     background-color: var(--black-color);
+        // }
     }
 }
 

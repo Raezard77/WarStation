@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 const NavBar = ({ logo, brandName, pageLinks }) => {
     return (
         <nav>
-            <div id="nav-logo-container">
+            <Link to={`/${brandName}`} id="nav-logo-container">
                 <figure>
-                    <img src={logo} alt="WarStation Logo" />
+                    <img src={logo} alt={`${brandName} Logo`} />
                 </figure>
                 <h1>{brandName}</h1>
-            </div>
+            </Link>
 
             <div id="nav-mobile">
                 <a id="burger-menu" data-href="#">
@@ -51,15 +51,9 @@ const NavBar = ({ logo, brandName, pageLinks }) => {
                     } else {
                         return (
                             <li key={index}>
-                                {link === "Home" ? (
-                                    <Link to={`/${brandName}`}>{link}</Link>
-                                ) : (
-                                    <Link
-                                        to={link.toString().split(" ").join("")}
-                                    >
-                                        {link}
-                                    </Link>
-                                )}
+                                <Link to={link.toString().split(" ").join("")}>
+                                    {link}
+                                </Link>
                             </li>
                         );
                     }
