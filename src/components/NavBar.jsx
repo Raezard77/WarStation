@@ -1,70 +1,7 @@
-import { useRef } from "react";
-import { Link, useMatch, useResolvedPath, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import '@scripts/navbar'
 
 const NavBar = ({ logo, brandName, pageLinks }) => {
-    const navUlRef = useRef(null);
-    const location = useLocation();
-
-    const handleRouteChange = (e) => {
-        const pageNavLi = e.target;
-        document.querySelectorAll("#nav-ul li a").forEach((elem) => {
-            elem.classList.remove("page-selected");
-        });
-        pageNavLi.classList.add("page-selected");
-
-        navUlRef.current.addEventListener("mouseover", (_) => {
-            pageNavLi.classList.remove("page-selected");
-        });
-        navUlRef.current.addEventListener("mouseleave", (_) => {
-            pageNavLi.classList.add("page-selected");
-        });
-    };
-
-    // useEffect(
-    //     (_) => {
-    //         console.log("location changed");
-    //         const burger = document.querySelector("#burger-menu");
-    //         const navLinks = document.querySelector("#nav-ul");
-    //         let pageNavLi = null;
-
-    //         burger.addEventListener("click", () => {
-    //             burger.classList.toggle("burger-cross");
-    //             navLinks.classList.toggle("side-nav");
-    //         });
-
-
-
-    //         if (
-    //             // checking if user ain on index route
-    //             window.location.href.indexOf(
-    //                 "/",
-    //                 window.location.origin.length + 1
-    //             ) > 0 &&
-    //             window.location.href[window.location.href.length - 1] != "/" && // for hosting on gh pages which makes the domain name the base URL
-    //             window.location.href[window.location.href.length - 1] != "#"
-    //         ) {
-
-
-    //             if (document.querySelector(".child-nav-link") != null) {
-    //                 pageNavLi =
-    //                     document.querySelector(".child-nav-link").parentElement
-    //                         .parentElement.previousSibling;
-    //                 pageNavLi.classList.add("page-selected");
-    //             } else {
-
-
-    //                 pageNavLi = document.querySelector(
-    //                     "#nav-ul li a.page-selected"
-    //                 );
-    //             }
-
-    //             }
-    //         }
-    //     },
-    //     [location]
-    // );
-
     return (
         <nav>
             <Link to={`/${brandName}`} id="nav-logo-container">
@@ -82,7 +19,7 @@ const NavBar = ({ logo, brandName, pageLinks }) => {
                 </a>
             </div>
 
-            <ul id="nav-ul" ref={navUlRef}>
+            <ul id="nav-ul">
                 {pageLinks.map((link, index) => {
                     if (typeof link === "object") {
                         return (
@@ -101,9 +38,6 @@ const NavBar = ({ logo, brandName, pageLinks }) => {
                                                             .toString()
                                                             .split(" ")
                                                             .join("")}
-                                                        onClick={
-                                                            handleRouteChange
-                                                        }
                                                         isChild={true}
                                                     >
                                                         {link2}
@@ -120,7 +54,6 @@ const NavBar = ({ logo, brandName, pageLinks }) => {
                             <li key={index}>
                                 <MarkedLink
                                     to={link.toString().split(" ").join("")}
-                                    onClick={handleRouteChange}
                                 >
                                     {link}
                                 </MarkedLink>
