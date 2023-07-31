@@ -69,10 +69,10 @@ const NavBar = ({ logo, brandName, pageLinks }) => {
 const MarkedLink = ({ to, children, isChild = false, ...props }) => {
     const resolvedPath = useResolvedPath(to);
     const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-    const linkClass = isChild ? "child-nav-link" : "page-selected";
+    const linkClass = isChild ? "child-page landed-on" : "page-selected";
 
     return (
-        <Link to={to} className={isActive ? linkClass : ""} {...props}>
+        <Link to={to} className={`${isChild ? "child-nav-link " : ""}${isActive ? linkClass : ""}`} {...props}>
             {children}
         </Link>
     );

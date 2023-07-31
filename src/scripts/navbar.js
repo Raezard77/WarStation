@@ -1,20 +1,52 @@
+let navUl;
+let pageNavLi;
+let links;
+let burger;
+
 window.onload = (_) => {
     // Vars
     navUl = document.querySelector("#nav-ul");
-    pageNavLi = document.querySelector(".page-selected");
     links = document.querySelectorAll("#nav-ul a");
     burger = document.querySelector("#burger-menu");
+
+    // Var || Syntax Still Throws null
+    if (document.querySelector(".child-page") != null) {
+        pageNavLi =
+            document.querySelector(".child-page").parentElement.parentElement
+                .previousSibling;
+    } else {
+        pageNavLi = document.querySelector(".page-selected");
+    }
+
+    // User Lands On A Child Page
+    if (document.querySelector(".landed-on") != null) {
+        document
+            .querySelector(".landed-on")
+            .parentElement.parentElement.previousSibling.classList.add(
+                "page-selected"
+            );
+        document.querySelector(".landed-on").classList.remove("landed-on");
+    }
+
+    // User Goes Back To Home (From A Child Page)
+    document
+        .querySelector("#nav-logo-container")
+        .addEventListener("click", (_) => {
+            links.forEach((elem) => {
+                elem.classList.remove("page-selected");
+            });
+        });
 
     // User Clicks On A Link
     links.forEach((link) =>
         // @Room_For_Better:- Needed a loop cz onClick is out of scope across files
         link.addEventListener("click", (event) => {
-            // if (event.target.classList.contains("child-nav-link")) {
-            //     pageNavLi =
-            //         event.target.parentElement.parentElement.previousSibling;
-            // } else {
-            // }
-            pageNavLi = event.target;
+            if (event.target.classList.contains("child-nav-link")) {
+                pageNavLi =
+                    event.target.parentElement.parentElement.previousSibling;
+            } else {
+                pageNavLi = event.target;
+            }
             links.forEach((elem) => {
                 elem.classList.remove("page-selected");
             });
@@ -46,8 +78,3 @@ window.onload = (_) => {
         navUl.classList.toggle("side-nav");
     });
 };
-
-let navUl;
-let pageNavLi;
-let links;
-let burger;
