@@ -168,12 +168,12 @@ nav {
     }
     #nav-ul {
         position: absolute;
-        right: -50vw;
+        right: -50dvw;
         top: $nav-height;
         margin-right: 0;
 
-        height: calc(100vh - #{$nav-height});
-        width: 50vw;
+        height: calc(100dvh - #{$nav-height});
+        width: 50dvw;
         background: var(--secondary-color)
             linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
         @include flex-position($dir: column, $x: space-around);
@@ -185,7 +185,7 @@ nav {
 
         // .dropdown-menu {
         //     position: relative;
-        //     height: 5vh;
+        //     height: 5dvh;
         //     border: 1px solid var(--accent-color);
         //     background-color: var(--black-color);
         // }
@@ -203,7 +203,7 @@ nav {
     }
 
     nav ul {
-        width: 70vw;
-        right: -70vw;
+        width: 70dvw;
+        right: -70dvw;
     }
 }
