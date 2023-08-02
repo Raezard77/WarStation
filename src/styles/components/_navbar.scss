@@ -166,6 +166,7 @@ nav {
     #nav-mobile {
         display: block;
     }
+
     #nav-ul {
         position: absolute;
         right: -50dvw;
@@ -191,6 +192,19 @@ nav {
             margin-top: 2rem;
             background-color: var(--primary-color);
         }
+    }
+
+    #nav-ul li {
+        opacity: 0;
+        transform: translateX(70px);
+        transition-property: all;
+        transition-timing-function: linear;
+        transition-delay: .2s;
+    }
+
+    #nav-ul .show-side-lis {
+        opacity: 1;
+        transform: translateX(0);
     }
 
     #nav-ul .dropdown-menu li a::before {

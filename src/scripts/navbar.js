@@ -2,13 +2,16 @@ let navUl;
 let pageNavLi;
 let links;
 let burger;
+let navLIs;
 
 window.addEventListener("DOMContentLoaded", (_) => {
-    setTimeout((_) => {  // Backing Up DOMContentLoaded
+    setTimeout((_) => {
+        // Backing Up DOMContentLoaded
         // Vars
         navUl = document.querySelector("#nav-ul");
         links = document.querySelectorAll("#nav-ul a");
         burger = document.querySelector("#burger-menu");
+        navLIs = document.querySelectorAll("#nav-ul li");
 
         // Var || Syntax Still Throws null
         if (document.querySelector(".child-page") != null) {
@@ -78,6 +81,10 @@ window.addEventListener("DOMContentLoaded", (_) => {
         burger.addEventListener("click", () => {
             burger.classList.toggle("burger-cross");
             navUl.classList.toggle("side-nav");
+            navLIs.forEach((link, index) => {
+                link.classList.toggle("show-side-lis");
+                link.style.transitionDuration = `${ index / 7 + .3 }s`;
+            });
         });
     });
 });
