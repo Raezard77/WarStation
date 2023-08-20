@@ -1,17 +1,17 @@
 // Identity
-@import "./boilerplate/colors";
-@import "./boilerplate/fonts";
+@import "./common/colors";
+@import "./common/fonts";
 
 // Reusable
-@import "./boilerplate/vars";
-@import "./boilerplate/mixins";
+@import "./common/vars";
+@import "./common/mixins";
 
 // Heavy - #Change_Me
-@import "./boilerplate/general";
-@import "./boilerplate/initial";
+@import "./common/general";
+@import "./common/initial";
 
 // Fancy
-@import "./boilerplate/anime";
+@import "./common/anime";
 
 // Components
 @import "./components/navbar";
